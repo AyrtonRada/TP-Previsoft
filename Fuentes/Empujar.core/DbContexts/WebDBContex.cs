@@ -14,6 +14,7 @@ namespace Empujar.core.DbContexts
         public DbSet<TipoDeCentroDeCosto> TiposDeCentroDeCosto { get; set; }
         public DbSet<Material> Materiales { get; set; }
         public DbSet<Galpon> Galpones { get; set; }
+        public DbSet<TipoDeGasto> TiposDeGasto { get; set; }
 
         /*OPER*/
 
