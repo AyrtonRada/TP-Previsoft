@@ -4,19 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Empujar.core.Models.CONF
+namespace Empujar.mvc.Models
 {
-    [Table("CONF_TiposDeCentroDeCosto")]
-    public class TipoDeCentroDeCosto
+    public class GalponViewModel
     {
 
-        [Key]
-        public int ID { get; set; }
-
+        [Required(ErrorMessage = "Requerido.")]
         public string Nombre { get; set; }
-
-        //PADRES
-
-        //HIJOS
     }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace Adrian.mvc.Models
+namespace Empujar.mvc.Models
 {
     public class ErrorViewModel
     {

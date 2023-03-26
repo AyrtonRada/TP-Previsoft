@@ -5,10 +5,9 @@ using Empujar.mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace Empujar.mvc.Controllers
 {
-    public class MaterialController : Controller
+    public class GalponController : Controller
     {
         private readonly WebDBContext db = new WebDBContext();
 
@@ -24,16 +23,16 @@ namespace Empujar.mvc.Controllers
             }
             catch (Exception ex)
             {
-                return RedirectToAction("Error", "Home", new { mensaje = "Error al ingresar al modulo de Materiales. Intente mas tarde." });
+                return RedirectToAction("Error", "Home", new { mensaje = "Error al ingresar al modulo de Galpones. Intente mas tarde." });
             }
         }
 
         //Devuelve la lista de objetos en JSON
         public async Task<JsonResult> GetInfo()
         {
-            var Tipos = await db.Materiales
+            var Tipos = await db.Galpones
                             .OrderBy(x => x.Nombre)
-                            .Select(y => new { Numeral = y.ID, Nombre = y.Nombre, PCompra = y.PrecioCompra, PVenta = y.PrecioVenta })
+                            .Select(y => new { Numeral = y.ID, Nombre = y.Nombre })
                             .ToListAsync();
 
             return Json(Tipos);
@@ -42,7 +41,7 @@ namespace Empujar.mvc.Controllers
         //Actualiza la base de datos
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<JsonResult> SaveInfo([Bind("Nombre", "PCompra", "PVenta")] MaterialViewModel tipo, int Numeral, double PCompra, double PVenta, string Mode)
+        public async Task<JsonResult> SaveInfo([Bind("Nombre")] GalponViewModel tipo, int Numeral, string Mode)
         {
             ResultadoViewModel resultadoView = new ResultadoViewModel();
 
@@ -54,7 +53,7 @@ namespace Empujar.mvc.Controllers
                     try
                     {
                         //Obtengo el regitro de la tabla correspondiente al objeto que se esta editando
-                        var tipoDB = await db.Materiales.FirstOrDefaultAsync(m => m.ID == Numeral);
+                        var tipoDB = await db.Galpones.FirstOrDefaultAsync(m => m.ID == Numeral);
 
                         if (tipoDB == null)
                         {
@@ -63,8 +62,6 @@ namespace Empujar.mvc.Controllers
                         }
 
                         tipoDB.Nombre = tipo.Nombre;
-                        tipoDB.PrecioCompra = tipo.PrecioCompra;
-                        tipoDB.PrecioVenta = tipo.PrecioVenta;
 
                         db.Update(tipoDB);
                         await db.SaveChangesAsync();
@@ -82,7 +79,7 @@ namespace Empujar.mvc.Controllers
                     try
                     {
                         //Obtengo el regitro de la tabla correspondiente al objeto que quiero borrar
-                        var tipoDB = await db.Materiales.FirstOrDefaultAsync(m => m.ID == Numeral);
+                        var tipoDB = await db.Galpones.FirstOrDefaultAsync(m => m.ID == Numeral);
 
                         if (tipoDB == null)
                         {
@@ -105,14 +102,12 @@ namespace Empujar.mvc.Controllers
                     //Agrego el registros 
                     try
                     {
-                        Material tipoDB = new Material
+                        Galpon tipoDB = new Galpon
                         {
-                            Nombre = tipo.Nombre,
-                            PrecioCompra = tipo.PrecioCompra,
-                            PrecioVenta = tipo.PrecioVenta
+                            Nombre = tipo.Nombre
                         };
 
-                        db.Materiales.Add(tipoDB);
+                        db.Galpones.Add(tipoDB);
                         await db.SaveChangesAsync();
                         resultadoView.NumeralID = tipoDB.ID.ToString();
                     }
@@ -131,6 +126,4 @@ namespace Empujar.mvc.Controllers
             return Json(resultadoView);
         }
     }
-
 }
-

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adrian.core.Config
+namespace Empujar.core.Config
 {
     public static class ConfigSecurity
     {

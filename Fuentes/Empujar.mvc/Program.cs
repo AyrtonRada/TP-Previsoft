@@ -1,5 +1,5 @@
-using Adrian.core.Config;
-using Adrian.mvc.Data;
+using Empujar.core.Config;
+using Empujar.mvc.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Adrian.mvc.Models
+namespace Empujar.mvc.Models
 {
     public class ResultadoViewModel
     {

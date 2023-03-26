@@ -1,9 +1,10 @@
-﻿@model Empujar.mvc.Models.MaterialViewModel
+﻿@model Empujar.mvc.Models.GalponViewModel
 
 @{
     Layout = "~/Views/Shared/_LayoutBackend.cshtml";
-    ViewData["Title"] = "Materiales";
+    ViewData["Title"] = "Galpones";
 }
+
 
 <!-- View -->
 <div id="divView" class="row justify-content-center mt-4">
@@ -12,7 +13,7 @@
             <div class="card-body">
                 <div class="row card-title mb-3">
                     <div class="col-10">
-                        <h4>Materiales</h4>
+                        <h4>Galpones</h4>
                     </div>
                     <div tipo="btnContainer" class="col-2 me-0 text-end">
                         <i class="fas fa-plus-circle fa-2x pointer" tipo="btnAdd" mode="A" numeral="-1"></i>
@@ -32,8 +33,8 @@
                 </div>
                 <div tipo="btnContainer" class="list-group list-group-flush" id="divTipos" style="display:none"></div>
                 <div class="jumbotron" id="divListaVacia" style="display:none;margin-bottom:0px">
-                    <h4 class="text-center">No has registrado ningun Material</h4>
-                    <p class="text-center lead mt-4 mb-0">Para registrar nuevos Materiales debes pulsar el boton <i class="fas fa-plus-circle"></i> ubicado en la esquina superior derecha.</p>
+                    <h4 class="text-center">No has registrado ningun Galpon</h4>
+                    <p class="text-center lead mt-4 mb-0">Para registrar nuevos Glapones debes pulsar el boton <i class="fas fa-plus-circle"></i> ubicado en la esquina superior derecha.</p>
                 </div>
             </div>
         </div>
@@ -47,11 +48,11 @@
             <div class="card-body">
                 <div class="row card-title">
                     <div class="col-12">
-                        <h4 >Nuevo Material</h4>
+                        <h4 >Nuevo Galpon</h4>
                         <hr />
                     </div>
                 </div>
-                <form method="post" action="/Materiales/SaveInfo" autocomplete="off" id="Formulario">
+                <form method="post" action="/Galpon/SaveInfo" autocomplete="off" id="Formulario">
                     @Html.AntiForgeryToken()
                     @Html.Hidden("Numeral")
                     @Html.Hidden("Mode")
@@ -63,16 +64,6 @@
                                     <label asp-for="Nombre" class="form-label"></label>
                                     <input asp-for="Nombre" tipo="Nombre" class="form-control" maxlength="100" autofocus />
                                     <span asp-validation-for="Nombre" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                    <label asp-for="PrecioCompra" class="form-label">Precio de Compra</label>
-                                    <input asp-for="PrecioCompra" tipo="PrecioCompra" class="form-control" maxlength="100" autofocus />
-                                    <span asp-validation-for="PrecioCompra" class="text-danger"></span>
-                                </div>
-                                <div class="mb-3">
-                                    <label asp-for="PrecioVenta" class="form-label">Precio de Venta</label>
-                                    <input asp-for="PrecioVenta" tipo="PrecioVenta" class="form-control" maxlength="100" autofocus />
-                                    <span asp-validation-for="PrecioVenta" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>

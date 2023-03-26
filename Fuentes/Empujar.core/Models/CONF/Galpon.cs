@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Empujar.core.Models.CONF
 {
-    [Table("CONF_TiposDeCentroDeCosto")]
-    public class TipoDeCentroDeCosto
+    [Table("CONF_Galpones")]
+    public class Galpon
     {
 
         [Key]

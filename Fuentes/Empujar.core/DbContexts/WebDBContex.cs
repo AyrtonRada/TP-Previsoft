@@ -1,10 +1,9 @@
-﻿using Adrian.core.Config;
-using Adrian.core.Models.CONF;
+﻿using Empujar.core.Config;
 using Empujar.core.Models.CONF;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Adrian.core.DbContexts
+namespace Empujar.core.DbContexts
 {
     public class WebDBContext : DbContext
     {
@@ -14,6 +13,7 @@ namespace Adrian.core.DbContexts
         /*CONF*/
         public DbSet<TipoDeCentroDeCosto> TiposDeCentroDeCosto { get; set; }
         public DbSet<Material> Materiales { get; set; }
+        public DbSet<Galpon> Galpones { get; set; }
 
         /*OPER*/
 

@@ -1,10 +1,10 @@
-﻿using Adrian.core.Config;
-using Adrian.mvc.Models;
+﻿using Empujar.core.Config;
+using Empujar.mvc.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Adrian.mvc.Controllers
+namespace Empujar.mvc.Controllers
 {
     public class HomeController : Controller
     {

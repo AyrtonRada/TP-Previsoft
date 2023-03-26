@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Adrian.mvc.Models
+namespace Empujar.mvc.Models
 {
     public class MaterialViewModel
     {

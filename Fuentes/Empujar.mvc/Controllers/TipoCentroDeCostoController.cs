@@ -1,12 +1,12 @@
-﻿using Adrian.core.Config;
-using Adrian.core.DbContexts;
-using Adrian.core.Models.CONF;
-using Adrian.mvc.Models;
+﻿using Empujar.core.Config;
+using Empujar.core.DbContexts;
+using Empujar.core.Models.CONF;
+using Empujar.mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Adrian.mvc.Controllers
+namespace Empujar.mvc.Controllers
 {
     public class TipoCentroDeCostoController : Controller
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Adrian.core.Config
+namespace Empujar.core.Config
 {
     public class ConfigMailing
     {
