@@ -41,7 +41,7 @@ namespace Empujar.mvc.Controllers
         //Actualiza la base de datos
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<JsonResult> SaveInfo([Bind("Nombre")] TipoDeGastoViewModel tipo, int Numeral, string Mode)
+        public async Task<JsonResult> SaveInfo([Bind("ID,Nombre")] TipoDeGastoViewModel tipo, int Numeral, string Mode)
         {
             ResultadoViewModel resultadoView = new ResultadoViewModel();
 
